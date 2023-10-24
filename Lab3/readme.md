@@ -59,3 +59,5 @@ kubectl port-forward -n lab3 sidecar-pod 8080:80
 ![Date log](date-log.png)
 
 ![Curl](curl.png)
+
+![Get pods](get-pods.png)
