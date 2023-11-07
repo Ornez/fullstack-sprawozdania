@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: restrictednginx
+  namespace: lab4
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: nginx-template
+  template:
+    metadata:
+      labels:
+        app: nginx-template
+    spec:
+      containers:
+      - name: nginx-container
+        image: nginx
+        resources:
+          limits:
+            memory: "256Mi"
+            cpu: "250m"
+          requests:
+            memory: "64Mi"
+            cpu: "125m"
