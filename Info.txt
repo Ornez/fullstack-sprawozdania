@@ -1,0 +1,72 @@
+kubectl get ns
+
+kubectl describe ns
+
+kubectl create deploy restrictednginx -n lab4 --image-nginx --replicas=3
+
+kubectl get deploy -n lab4
+kubectl get deploy -n lab4 restrictednginx
+
+kubectl set resources -h
+kubectl set resources 
+
+Jezeli chcemy zdjac ograniczenia, to ustawiamy parametry na 0
+
+kubectl set resources deployment restrictednginx -n lab4 --limits=cpu=250m,memory=256Mi --requests=cpu=125m,memory=64Mi
+
+set deployment nie usuwa starej repliki, tylko ją wyzerowuje
+
+kubectl describe ns lab4
+
+kubectl delete all --all -n lab4
+
+kubectl get ns
+
+kubectl delete -n lab4
+
+kubectl get all -A
+
+kubectl api-resources | grep -i apps/v1
+
+kubectl create deploy -h
+
+kubectl create deployment my-dep --image=nginx --replicas=3
+
+kubectl descrive ns default
+
+jak zdjac quote?
+kubectl create quota -h
+kubectl get quota
+kubectl delete quota lab4
+
+kubectl delete deploy my-dep 
+
+kubectl create deployment my-dep --image=nginx --replicas=3
+
+kubectl get deploy
+
+kubectl describe deploy my-dep
+
+--dry-run=client <- generowanie yaml
+
+kubectl edit deploy my-dep
+
+kubectl edit -h
+
+kubectl label deployment my-dep lab=tragedia
+
+kubectl get deploy my-dep --show-labels
+
+kubectl get deploy -A --selector lab=tragedia
+
+kubectl label deployment my-dep lab-
+
+minikube addons list
+
+minikube addons metricserver enable???
+
+horizontalPodAutoscaler - HPA
+https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale-walkthrough/
+
+
+

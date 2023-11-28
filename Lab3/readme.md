@@ -61,3 +61,9 @@ kubectl port-forward -n lab3 sidecar-pod 8080:80
 ![Curl](curl.png)
 
 ![Get pods](get-pods.png)
+
+```
+kubectl exec -it -n lab3 sidecar-pod -c nginx-container
+kubectl port-forward -n lab3 sidecar-pod 8081:80 & 
+
+```
